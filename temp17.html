@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .con{
+            text-align: center;
+            background-color: burlywood;
+        }
+    </style>
+    <script>
+      function f() {
+        let name = document.getElementById("name").value;
+        let mail = document.getElementById("email").value;
+        let passw = document.getElementById("pass").value;
+        let dob = document.getElementById("DOB").value;
+        data.innerHTML = `${name},${mail},${passw},${dob}`;
+      }
+    </script>
+  </head>
+  <body>
+    <div class="con">
+    <h>NEW USER SIGNUP FORM</h>
+   <p><input type="text" placeholder="Enter name" id="name" /></p>
+   <p> <input type="text" placeholder="Enter email" id="email" /></p>
+<p><input type="password" placeholder="Enter password" id="pass" /></p>
+<p><input type="date" placeholder="Enter DOB" id="DOB" /></p>
+<p><button onclick="f()">Register</button></p>
+    <div id="data"></div>
+    </div>
+  </body>
+</html>
