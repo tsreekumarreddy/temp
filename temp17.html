@@ -6,29 +6,61 @@
     <title>Document</title>
     <style>
         .con{
+            display: flex;
+            justify-content: center;
             text-align: center;
-            background-color: burlywood;
+            padding: 20px;
+        }
+        .box{
+          border: 3px solid black;
+          margin: 40px;
+          border-radius: 5%;
+          padding: 30px;
+          width: 300px;
+        }
+        button{
+            background-color:blue;
+            width:100%;
+           padding: 20px;
+            border-radius: 10px;
+            color: white;
+            
+        }
+        input{
+          width: 90%;
+          padding:20px;
+
         }
     </style>
     <script>
+
       function f() {
+        let arr=[]
         let name = document.getElementById("name").value;
         let mail = document.getElementById("email").value;
         let passw = document.getElementById("pass").value;
         let dob = document.getElementById("DOB").value;
-        data.innerHTML = `${name},${mail},${passw},${dob}`;
+
+        arr.push({ name, mail, passw, dob });
+
+        //let data = document.getElementById("data");
+        for (let i = 0; i < arr.length; i++) {
+          data.innerHTML += `<p>${arr[i].name}, ${arr[i].mail},${arr[i].passw},${arr[i].dob}</p>`;
+        }
       }
     </script>
   </head>
   <body>
     <div class="con">
-    <h>NEW USER SIGNUP FORM</h>
+      <div class="box">
+    <h2>NEW USER SIGNUP FORM</h2>
    <p><input type="text" placeholder="Enter name" id="name" /></p>
    <p> <input type="text" placeholder="Enter email" id="email" /></p>
 <p><input type="password" placeholder="Enter password" id="pass" /></p>
 <p><input type="date" placeholder="Enter DOB" id="DOB" /></p>
 <p><button onclick="f()">Register</button></p>
     <div id="data"></div>
+    </div>
     </div>
   </body>
 </html>
