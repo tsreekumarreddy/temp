@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script>
-        function f(){
-            let n=document.getElementById("num").value;
-            str=""
-            for(let i=1;i<=10;i++){
-               str+=`<div>${n}X${i}=${n*i}<div>`
-            }
-            data.innerHTML=str
+      function f() {
+        let n = document.getElementById("num").value;
+        str = "";
+        for (let i = 1; i <= 10; i++) {
+          str += `<div>${n}X${i}=${n * i}<div><br>`;
         }
+        data.innerHTML = str;
+      }
     </script>
-</head>
-<body>
-   <p> <input type="number" placeholder="Enter the number"id="num"/></p>
-    <p><button onclick="f()">SUBMIT</button></p>
+  </head>
+  <body>
+    <p>
+      <input
+        type="number"
+        placeholder="Enter the number"
+        id="num"
+        onchange="f()"
+      />
+    </p>
+    <!-- <p><button onclick="f()">SUBMIT</button></p> -->
     <div id="data"></div>
-</body>
+  </body>
 </html>
