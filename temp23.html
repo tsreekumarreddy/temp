@@ -10,22 +10,22 @@
         { id: 2, name: "P2", price: 45 },
         { id: 3, name: "P3", price: 30 },
       ];
-      let a=0;
       const cart = {};
       const addToCart = (id) => {
-        // const score={};
-        // score["maths"]=95;
-        // score["maths"]=score["maths"]+2;
-        // console.log(score);
         if (!cart[id]) {
           cart[id] = 1;
-          console.log(cart);
           showCart();
-        } else if (cart[id] >= 1) {
-          increment(id);
-          a++;
         }
       };
+    //   const addToCart = (id) => {
+    //     if (!cart[id]) {
+    //       cart[id] = 1;
+    //       console.log(cart);
+    //       showCart();
+    //     } else if (cart[id] >= 1) {
+    //       increment(id);
+    //     }
+    //   };
       const increment = (id) => {
         cart[id] += 1;
         // console.log(cart)
