@@ -12,8 +12,26 @@
       ];
       const cart = {};
       const addToCart = (id) => {
-        cart[id] = 1;
-        console.log(cart);
+        // const score={};
+        // score["maths"]=95;
+        // score["maths"]=score["maths"]+2;
+        // console.log(score);
+        if (cart[id] != 1) {
+          cart[id] = 1;
+          console.log(cart);
+          showCart();
+        } else if (cart[id] >= 1) {
+          increment(id);
+        }
+      };
+      const increment = (id) => {
+        cart[id] += 1;
+        // console.log(cart)
+        showCart();
+      };
+      const decrement = (id) => {
+        cart[id] -= 1;
+        // console.log(cart)
         showCart();
       };
 
@@ -22,9 +40,11 @@
         products.map((value) => {
           if (cart[value.id]) {
             str += `
-            <li>${value.name}-$${value.price}-<button>-</button>${
-              cart[value.id]
-            }<button>+</button>-${value.price * cart[value.id]}</li>
+            <li>${value.name}-$${value.price}-<button onclick="decrement(${
+              value.id
+            })">-</button>${cart[value.id]}<button onclick="increment(${
+              value.id
+            })">+</button>-${value.price * cart[value.id]}</li>
             `;
           }
         });
