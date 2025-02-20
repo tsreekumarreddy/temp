@@ -106,15 +106,16 @@
         "Nov",
         "Dec",
       ];
-      let firstname=""
+      let firstname = "";
       let surname = "";
-      let email = ""
-      let password = ""
-      let gender = ""
-      let day = ""
-      let month = ""
-      let year = ""
-      let pronoun = ""
+      let email = "";
+      let password = "";
+      let gender = 0;
+      let day = "";
+      let month = "";
+      let year = "";
+      let pronoun = "";
+      let g = "";
       const showData = () => {
         firstname = document.getElementById("firstname").value;
         surname = document.getElementById("surname").value;
@@ -126,7 +127,7 @@
         let month = document.getElementById("month").value;
         let year = document.getElementById("year").value;
         let dob = `${day}-${month}-${year}`;
-        let g = "";
+        g = "";
         if (gender[0].checked) g = "Female";
         if (gender[1].checked) g = "Male";
         if (gender[2].checked) g = pronoun;
@@ -150,6 +151,7 @@
         let d = dt.getDate();
         let m = dt.getMonth();
         let y = dt.getFullYear();
+        if (pronoun != "NA") prSelect.style.display = "block";
         for (let i = 1; i <= 31; i++) {
           str += `<option ${i === d && "selected"}>${i}</option>`;
         }
@@ -195,15 +197,21 @@
       <div class="row">
         <div class="radioClass">
           <div><label> Female</label></div>
-          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+          <div><input type="radio" ${
+            g === "Female" && "checked"
+          } name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Male</label></div>
-          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+          <div><input type="radio" ${
+            g === "Male" && "checked"
+          } name="gender" onclick="togglePronoun()" /></div>
         </div>
         <div class="radioClass">
           <div><label> Custom</label></div>
-          <div><input type="radio" name="gender" onclick="togglePronoun()" /></div>
+          <div><input type="radio" ${
+            pronoun != "NA" && "checked"
+          } name="gender" onclick="togglePronoun()" /></div>
         </div>
       </div>
 
